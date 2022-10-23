@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweets</title>
+</head>
+<header class="">
+    <div class="">
+        <input type="text" />
+        <button>Search</button>
+    </div>
+</header>
+
+<body>
+    <h1>Tweets</h1>
+    <div style="display: flex; flex-direction:column; justify-content: center; align-items: center;" class="tweets">
+        <blockquote class="twitter-tweet">
+            <a href="https://twitter.com/x/status/807811447862468608"></a>
+        </blockquote>
+
+    </div>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+
+<script>
+    const data = ["https://twitter.com/PopSci/status/1583143537452908546", "https://twitter.com/beincrypto/status/1583740728794320897", "https://twitter.com/BITech/status/1582845024756109312", "https://twitter.com/verge/status/1583691895321993216"]
+    const tweets = document.querySelector('.tweets');
+    data.forEach((tweet) => {
+        const blockquote = document.createElement('blockquote');
+        blockquote.classList.add('twitter-tweet');
+        const a = document.createElement('a');
+        a.href = `https://twitter.com/x/status/${tweet.split('/')[5]}`;
+        blockquote.appendChild(a);
+        tweets.appendChild(blockquote);
+    })
+
+
+</script>
+
+</html>
